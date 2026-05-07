@@ -5,6 +5,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GoogleAnalytics, GTMNoscript } from "@/components/GoogleAnalytics";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/JsonLd";
+import { getRequestRegion } from "@/lib/request-region";
+import { getCopy } from "@/lib/copy";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -69,13 +71,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const region = await getRequestRegion();
+  const copy = getCopy(region.locale);
+
   return (
-    <html lang="en">
+    <html lang={region.locale}>
       <head>
         <GoogleAnalytics />
         <OrganizationJsonLd />
@@ -85,9 +90,9 @@ export default function RootLayout({
         className={`${montserrat.variable} ${exo.variable} ${ubuntu.variable} ${oswald.variable} font-sans antialiased`}
       >
         <GTMNoscript />
-        <Navbar />
+        <Navbar copy={copy.nav} />
         {children}
-        <Footer />
+        <Footer copy={copy.footer} />
       </body>
     </html>
   );

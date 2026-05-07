@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const footerLinks = [
-  { href: "/services", label: "Services" },
-  { href: "/highlights", label: "Highlights" },
-  { href: "/privacy-policy", label: "Privacy Policy" },
-  { href: "/terms-of-service", label: "Terms of Service" },
-];
+type FooterCopy = {
+  services: string;
+  highlights: string;
+  privacyPolicy: string;
+  termsOfService: string;
+  copyright: string;
+};
 
 const socialLinks = [
   {
@@ -38,7 +39,18 @@ const socialLinks = [
   },
 ];
 
-export function Footer() {
+type FooterProps = {
+  copy: FooterCopy;
+};
+
+export function Footer({ copy }: FooterProps) {
+  const footerLinks = [
+    { href: "/services", label: copy.services },
+    { href: "/highlights", label: copy.highlights },
+    { href: "/privacy-policy", label: copy.privacyPolicy },
+    { href: "/terms-of-service", label: copy.termsOfService },
+  ];
+
   return (
     <footer className="bg-white py-8">
       <div className="mx-auto max-w-7xl px-6">
@@ -54,7 +66,7 @@ export function Footer() {
               />
             </Link>
             <div className="h-6 w-px bg-neutral-300" />
-            <p className="text-sm text-neutral-600">Copyright &copy;2024 Woortec</p>
+            <p className="text-sm text-neutral-600">{copy.copyright}</p>
           </div>
 
           <div className="flex flex-col items-center gap-4 md:flex-row">

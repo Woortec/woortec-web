@@ -5,14 +5,26 @@ import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/calendar", label: "Calendar" },
-  { href: "/highlights", label: "Highlights" },
+type NavbarCopy = {
+  home: string;
+  services: string;
+  calendar: string;
+  highlights: string;
+  cta: string;
+};
+
+const navLinks = (copy: NavbarCopy) => [
+  { href: "/", label: copy.home },
+  { href: "/services", label: copy.services },
+  { href: "/calendar", label: copy.calendar },
+  { href: "/highlights", label: copy.highlights },
 ];
 
-export function Navbar() {
+type NavbarProps = {
+  copy: NavbarCopy;
+};
+
+export function Navbar({ copy }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
@@ -37,9 +49,8 @@ export function Navbar() {
           />
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+          {navLinks(copy).map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -55,12 +66,11 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-5 text-sm font-semibold text-woortec-text shadow-[0_3px_3px_#00000012] transition-colors hover:shadow-md"
           >
-            Get Started
+            {copy.cta}
             <Image src="/icons/arrow.svg" alt="" width={16} height={16} />
           </a>
         </nav>
 
-        {/* Mobile Toggle */}
         <button
           className="text-black md:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -70,10 +80,9 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Nav */}
       {mobileOpen && (
         <nav className="border-t border-neutral-300 bg-white px-6 py-4 md:hidden">
-          {navLinks.map((link) => (
+          {navLinks(copy).map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -92,7 +101,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className="mt-3 inline-flex items-center gap-2 rounded-full bg-white px-6 py-5 text-sm font-semibold text-woortec-text shadow-[0_3px_3px_#00000012]"
           >
-            Get Started
+            {copy.cta}
             <Image src="/icons/arrow.svg" alt="" width={16} height={16} />
           </a>
         </nav>

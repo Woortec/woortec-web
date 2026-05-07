@@ -1,26 +1,60 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@plugin "@tailwindcss/typography";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-woortec: #38ef7db0;
+  --color-woortec-solid: #38ef7d;
+  --color-woortec-text: #19b092;
+  --color-woortec-dark: #202146;
+  --color-woortec-darker: #160042;
+  --color-dark-turquoise: #5e727d;
+  --color-slate-grey: #5e727d;
+  --color-gainsboro: #e2e4e8;
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #f7f7fc;
+  --color-neutral-300: #eff0f6;
+  --color-neutral-400: #dcddeb;
+  --color-neutral-600: #6e7191;
+  --color-neutral-800: #211f54;
+  --color-accent-primary: #4a3aff;
+  --color-gray-100: #f7f9fd;
+  --color-gray-200: #f3f5fb;
+  --color-gray-400: #b6b9ce;
+  --color-gray-500: #6b7094;
+  --color-gray-700: #282556;
+  --color-gray-900: #160042;
+  --color-grey-600: #393b6a;
+  --color-success-darker: #006638;
+  --color-success-lighter: #ebfff6;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: "Montserrat", sans-serif;
+  --font-heading: "Exo", sans-serif;
+  --font-body: "Ubuntu", sans-serif;
+  --font-display: "Oswald", sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
 }

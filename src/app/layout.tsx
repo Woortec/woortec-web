@@ -90,9 +90,9 @@ export default async function RootLayout({
         className={`${montserrat.variable} ${exo.variable} ${ubuntu.variable} ${oswald.variable} font-sans antialiased`}
       >
         <GTMNoscript />
-        <Navbar copy={copy.nav} />
+        <Navbar copy={copy.nav} locale={region.locale} currency={region.currency} />
         {children}
-        <Footer copy={copy.footer} />
+        <Footer copy={copy.footer} locale={region.locale} currency={region.currency} />
       </body>
     </html>
   );

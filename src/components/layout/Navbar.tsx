@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+import type { Currency, Locale } from "@/lib/locale";
 
 type NavbarCopy = {
   home: string;
@@ -22,9 +24,11 @@ const navLinks = (copy: NavbarCopy) => [
 
 type NavbarProps = {
   copy: NavbarCopy;
+  locale: Locale;
+  currency: Currency;
 };
 
-export function Navbar({ copy }: NavbarProps) {
+export function Navbar({ copy, locale, currency }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
@@ -37,7 +41,7 @@ export function Navbar({ copy }: NavbarProps) {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 gap-4">
         <Link href="/" className="flex-shrink-0" onClick={(e) => handleNavClick(e, "/")}>
           <Image
             src="/logos/logo.png"
@@ -49,7 +53,7 @@ export function Navbar({ copy }: NavbarProps) {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-6 md:flex">
           {navLinks(copy).map((link) => (
             <Link
               key={link.href}
@@ -60,6 +64,7 @@ export function Navbar({ copy }: NavbarProps) {
               {link.label}
             </Link>
           ))}
+          <LocaleSwitcher locale={locale} currency={currency} />
           <a
             href="https://app.woortec.com/"
             target="_blank"
@@ -82,6 +87,9 @@ export function Navbar({ copy }: NavbarProps) {
 
       {mobileOpen && (
         <nav className="border-t border-neutral-300 bg-white px-6 py-4 md:hidden">
+          <div className="mb-4">
+            <LocaleSwitcher locale={locale} currency={currency} />
+          </div>
           {navLinks(copy).map((link) => (
             <Link
               key={link.href}

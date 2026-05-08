@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import { LocaleSwitcher } from "@/components/LocaleSwitcher";
+import type { Currency, Locale } from "@/lib/locale";
 
 type FooterCopy = {
   services: string;
@@ -41,9 +43,11 @@ const socialLinks = [
 
 type FooterProps = {
   copy: FooterCopy;
+  locale: Locale;
+  currency: Currency;
 };
 
-export function Footer({ copy }: FooterProps) {
+export function Footer({ copy, locale, currency }: FooterProps) {
   const footerLinks = [
     { href: "/services", label: copy.services },
     { href: "/highlights", label: copy.highlights },
@@ -54,6 +58,9 @@ export function Footer({ copy }: FooterProps) {
   return (
     <footer className="bg-white py-8">
       <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-6 flex justify-center md:justify-end">
+          <LocaleSwitcher locale={locale} currency={currency} />
+        </div>
         <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
           <div className="flex items-center gap-4">
             <Link href="/">

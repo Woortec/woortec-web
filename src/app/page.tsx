@@ -15,8 +15,8 @@ export default async function Home() {
       <HeroSection copy={copy.hero} />
       <LogoSlider />
       <VideoSection />
-      <FeaturesTabSection />
-      <TestimonialSection />
+      <FeaturesTabSection locale={region.locale} />
+      <TestimonialSection locale={region.locale} />
     </main>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { getRequestRegion } from "@/lib/request-region";
 
 interface BlogPost {
   slug: string;
@@ -264,6 +265,7 @@ export default async function BlogPostPage({
 }) {
   const { slug } = await params;
   const post = posts.find((p) => p.slug === slug);
+  const { locale } = await getRequestRegion();
 
   if (!post) {
     notFound();
@@ -279,13 +281,17 @@ export default async function BlogPostPage({
       <section className="bg-white py-16">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <span className="mb-4 inline-block text-sm font-semibold text-woortec-text">
-            {post.category}
+            {locale === "es"
+              ? post.category === "Blogs"
+                ? "Blog"
+                : "Noticias"
+              : post.category}
           </span>
           <h1 className="font-heading text-3xl leading-tight font-bold text-black md:text-4xl">
             {post.title}
           </h1>
           <p className="mt-4 text-neutral-600">
-            By{" "}
+            {locale === "es" ? "Por " : "By "}
             <span className="font-medium text-black">{post.author}</span>
           </p>
         </div>
@@ -330,7 +336,11 @@ export default async function BlogPostPage({
         <section className="py-16">
           <div className="mx-auto max-w-7xl px-6">
             <h2 className="mb-8 font-heading text-2xl font-bold text-black">
-              Latest {post.category}
+              {locale === "es"
+                ? post.category === "Blogs"
+                  ? "Últimos blogs"
+                  : "Últimas noticias"
+                : `Latest ${post.category}`}
             </h2>
             <div className="grid gap-8 sm:grid-cols-2">
               {relatedPosts.map((related) => (
@@ -351,13 +361,17 @@ export default async function BlogPostPage({
                     </div>
                   )}
                   <span className="text-sm text-woortec-text">
-                    {related.category}
+                    {locale === "es"
+                      ? related.category === "Blogs"
+                        ? "Blog"
+                        : "Noticias"
+                      : related.category}
                   </span>
                   <h3 className="mt-1 text-lg font-semibold text-black group-hover:text-woortec-text">
                     {related.title}
                   </h3>
                   <p className="mt-1 text-sm text-neutral-600">
-                    By {related.author}
+                    {locale === "es" ? "Por" : "By"} {related.author}
                   </p>
                 </Link>
               ))}

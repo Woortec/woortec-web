@@ -32,9 +32,9 @@ export const copy: Record<Locale, CopySchema> = {
       cta: "Get Started",
     },
     hero: {
-      title: "Maximize impact, minimize spend with Woortec",
+      title: "Compare your campaigns with similar businesses and discover how to improve your results",
       description:
-        "At Woortec, we organize the advertising investment process with an integrated platform designed to simplify ad management and provide a centralized hub for all your campaigns.",
+        "In an environment where everyone has data, the advantage lies in understanding it in context. We compare your results with similar businesses to help you identify opportunities, understand which approaches work best in your sector, and turn your paid campaigns into clearer, more profitable decisions.",
       cta: "Get Started",
     },
     footer: {
@@ -51,13 +51,13 @@ export const copy: Record<Locale, CopySchema> = {
       services: "Servicios",
       calendar: "Calendario",
       highlights: "Novedades",
-      cta: "Empezar",
+      cta: "Empieza ahora",
     },
     hero: {
-      title: "Maximiza el impacto y reduce el gasto con Woortec",
+      title: "Compara tus campañas con negocios similares y descubre cómo mejorar tus resultados",
       description:
-        "En Woortec organizamos el proceso de inversión publicitaria con una plataforma integrada diseñada para simplificar la gestión de anuncios y ofrecerte un centro de control unificado para todas tus campañas.",
-      cta: "Empezar",
+        "En un entorno donde todos tienen datos, la ventaja está en entenderlos en contexto. Comparamos tus resultados con negocios similares para ayudarte a detectar oportunidades, entender qué enfoques funcionan mejor dentro de tu sector y convertir tus campañas de pago en decisiones más claras y rentables.",
+      cta: "Empieza ahora",
     },
     footer: {
       services: "Servicios",

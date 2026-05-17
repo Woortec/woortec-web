@@ -26,7 +26,25 @@ export default async function PersonalizedStrategiesPage() {
               <p className="text-neutral-600">{locale === "es" ? "Soluciones a medida para maximizar el potencial de tus campañas." : "Tailored solutions to maximize your campaign's potential."}</p>
               <p className="text-neutral-600">{locale === "es" ? "En Woortec entendemos que cada negocio es distinto. Por eso desarrollamos estrategias publicitarias personalizadas alineadas con tus objetivos y apoyadas en insights en tiempo real." : "At Woortec, we understand that every business is unique, and so are its advertising needs. That's why we focus on delivering personalized strategies that align with your business objectives. By utilizing our platform, you gain access to customizable insights and performance metrics that allow you to make data-driven decisions in real time."}</p>
             </div>
-            <div><Image src="/images/adscampaignresult.svg" alt="Personalized Strategy Dashboard" width={600} height={450} className="w-full" /></div>
+            <div className="space-y-4">
+              <div className="relative overflow-hidden rounded-3xl">
+                <Image src="/images/adscampaignresult.svg" alt="Personalized Strategy Dashboard" width={600} height={450} className="w-full" />
+                <a
+                  href="/images/adscampaignresult.svg"
+                  download="woortec-strategy-report.svg"
+                  className="absolute top-4 right-4 hidden rounded-full border border-white/70 bg-white/95 px-4 py-2 text-sm font-medium text-black shadow-md transition-colors hover:bg-white md:inline-flex"
+                >
+                  {locale === "es" ? "↓ Descargar informe" : "↓ Download report"}
+                </a>
+              </div>
+              <a
+                href="/images/adscampaignresult.svg"
+                download="woortec-strategy-report.svg"
+                className="inline-flex w-full items-center justify-center rounded-full border border-neutral-300 bg-white px-4 py-3 text-sm font-medium text-black shadow-sm transition-colors hover:bg-neutral-50 md:hidden"
+              >
+                {locale === "es" ? "↓ Descargar informe" : "↓ Download report"}
+              </a>
+            </div>
           </div>
         </div>
         <div className="pointer-events-none absolute -bottom-32 -left-32 opacity-10"><Image src="/images/blob.svg" alt="" width={500} height={500} aria-hidden="true" /></div>

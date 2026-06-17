@@ -5,6 +5,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GoogleAnalytics, GTMNoscript } from "@/components/GoogleAnalytics";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/JsonLd";
+import { MicrosoftClarity } from "@/components/MicrosoftClarity";
+import { ClarityConsent } from "@/components/ClarityConsent";
 import { getRequestRegion } from "@/lib/request-region";
 import { getCopy } from "@/lib/copy";
 
@@ -82,19 +84,9 @@ export default async function RootLayout({
   return (
     <html lang={region.locale}>
       <head>
+        <MicrosoftClarity />
+
         <GoogleAnalytics />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "wrkf27qmr0");
-            `,
-          }}
-        />
         <OrganizationJsonLd />
         <WebsiteJsonLd />
       </head>
@@ -104,6 +96,7 @@ export default async function RootLayout({
         <GTMNoscript />
         <Navbar copy={copy.nav} locale={region.locale} currency={region.currency} />
         {children}
+        <ClarityConsent locale={region.locale} />
         <Footer copy={copy.footer} locale={region.locale} currency={region.currency} />
       </body>
     </html>

@@ -11,21 +11,21 @@ const labels: Record<
   {
     title: string;
     body: string;
-    reject: string;
-    accept: string;
+    disable: string;
+    dismiss: string;
   }
 > = {
   en: {
-    title: "Analytics cookies",
-    body: "We use Microsoft Clarity to understand how visitors use the website and improve the experience. Analytics cookies are optional.",
-    reject: "Reject",
-    accept: "Accept analytics",
+    title: "Analytics active",
+    body: "We use Microsoft Clarity to improve the website. You can turn analytics off at any time.",
+    disable: "Turn off",
+    dismiss: "OK",
   },
   es: {
-    title: "Cookies de analítica",
-    body: "Usamos Microsoft Clarity para entender cómo se utiliza la web y mejorar la experiencia. Las cookies de analítica son opcionales.",
-    reject: "Rechazar",
-    accept: "Aceptar analítica",
+    title: "Analítica activa",
+    body: "Usamos Microsoft Clarity para mejorar la web. Puedes desactivar la analítica en cualquier momento.",
+    disable: "Desactivar",
+    dismiss: "OK",
   },
 };
 
@@ -48,7 +48,7 @@ export function ClarityConsent({ locale }: { locale: Locale }) {
       return;
     }
 
-    sendClarityConsent("denied");
+    sendClarityConsent("granted");
     queueMicrotask(() => setIsVisible(true));
   }, []);
 
@@ -63,25 +63,25 @@ export function ClarityConsent({ locale }: { locale: Locale }) {
   }
 
   return (
-    <div className="fixed right-4 bottom-4 z-[60] w-[calc(100%-2rem)] max-w-sm rounded-lg border border-neutral-200 bg-white p-4 shadow-xl">
+    <div className="fixed right-4 bottom-4 z-[60] w-[calc(100%-2rem)] max-w-xs rounded-lg border border-neutral-200 bg-white/95 p-3 shadow-lg backdrop-blur">
       <p className="text-sm font-semibold text-black">{copy.title}</p>
-      <p className="mt-2 text-sm leading-5 text-neutral-600">
+      <p className="mt-1 text-xs leading-5 text-neutral-600">
         {copy.body}
       </p>
-      <div className="mt-4 flex flex-wrap justify-end gap-2">
+      <div className="mt-3 flex flex-wrap justify-end gap-2">
         <button
           type="button"
-          className="rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition hover:bg-neutral-50"
+          className="rounded-full border border-neutral-300 px-3 py-1.5 text-xs font-medium text-neutral-700 transition hover:bg-neutral-50"
           onClick={() => handleConsent("denied")}
         >
-          {copy.reject}
+          {copy.disable}
         </button>
         <button
           type="button"
-          className="rounded-full bg-woortec px-4 py-2 text-sm font-semibold text-black/75 transition hover:bg-woortec-solid"
+          className="rounded-full bg-woortec px-3 py-1.5 text-xs font-semibold text-black/75 transition hover:bg-woortec-solid"
           onClick={() => handleConsent("granted")}
         >
-          {copy.accept}
+          {copy.dismiss}
         </button>
       </div>
     </div>

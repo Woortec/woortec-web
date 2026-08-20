@@ -10,6 +10,7 @@ import type { Currency, Locale } from "@/lib/locale";
 type NavbarCopy = {
   home: string;
   services: string;
+  agency: string;
   calendar: string;
   highlights: string;
   cta: string;
@@ -18,6 +19,7 @@ type NavbarCopy = {
 const navLinks = (copy: NavbarCopy) => [
   { href: "/", label: copy.home },
   { href: "/services", label: copy.services },
+  { href: "/agencia", label: copy.agency },
   { href: "/calendar", label: copy.calendar },
   { href: "/highlights", label: copy.highlights },
 ];

@@ -5,6 +5,7 @@ import type { Currency, Locale } from "@/lib/locale";
 
 type FooterCopy = {
   services: string;
+  agency: string;
   highlights: string;
   privacyPolicy: string;
   termsOfService: string;
@@ -50,6 +51,7 @@ type FooterProps = {
 export function Footer({ copy, locale, currency }: FooterProps) {
   const footerLinks = [
     { href: "/services", label: copy.services },
+    { href: "/agencia", label: copy.agency },
     { href: "/highlights", label: copy.highlights },
     { href: "/privacy-policy", label: copy.privacyPolicy },
     { href: "/terms-of-service", label: copy.termsOfService },

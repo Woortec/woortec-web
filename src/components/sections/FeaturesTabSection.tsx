@@ -48,6 +48,18 @@ export function FeaturesTabSection({ locale }: FeaturesTabSectionProps) {
         link: "/ads-management",
         image: "/images/adsperformance.svg",
       },
+      {
+        id: "agency",
+        label: locale === "es" ? "Agencia" : "Agency",
+        icon: "/icons/chatting.svg",
+        title: locale === "es" ? "Agencia Woortec" : "Woortec Agency",
+        description:
+          locale === "es"
+            ? "Una categoría pensada para marketing, automatización y community management, con una ejecución cercana y orientada a resultados."
+            : "A category built for marketing, automation, and community management, with hands-on execution and a focus on results.",
+        link: "/agencia",
+        image: "/images/content-image-02.png",
+      },
     ],
     [locale]
   );

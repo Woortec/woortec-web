@@ -16,6 +16,19 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Support chat
+
+The site includes a floating support chat widget on every page.
+
+Optional environment variables:
+
+```bash
+NEXT_PUBLIC_SUPPORT_EMAIL=info@woortec.com
+NEXT_PUBLIC_SUPPORT_CHAT_URL=https://your-chat-provider.example/widget-or-whatsapp-link
+```
+
+If `NEXT_PUBLIC_SUPPORT_CHAT_URL` is not set, the primary support action opens a prefilled email to `NEXT_PUBLIC_SUPPORT_EMAIL`.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

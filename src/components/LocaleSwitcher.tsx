@@ -33,7 +33,9 @@ export function LocaleSwitcher({ locale, className = "" }: LocaleSwitcherProps) 
 
   const switchLocale = (nextLocale: Locale) => {
     const nextCurrency = getCurrencyForLocale(nextLocale);
+    // eslint-disable-next-line react-hooks/immutability
     document.cookie = `woortec_locale=${nextLocale}; path=/; max-age=31536000; samesite=lax`;
+    // eslint-disable-next-line react-hooks/immutability
     document.cookie = `woortec_currency=${nextCurrency}; path=/; max-age=31536000; samesite=lax`;
     setOpen(false);
 

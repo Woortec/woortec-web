@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { GoogleAnalytics, GTMNoscript } from "@/components/GoogleAnalytics";
 import { OrganizationJsonLd, WebsiteJsonLd } from "@/components/JsonLd";
+import { SupportChat } from "@/components/SupportChat";
 import { MicrosoftClarity } from "@/components/MicrosoftClarity";
 import { ClarityConsent } from "@/components/ClarityConsent";
 import { getRequestRegion } from "@/lib/request-region";
@@ -85,7 +86,6 @@ export default async function RootLayout({
     <html lang={region.locale}>
       <head>
         <MicrosoftClarity />
-
         <GoogleAnalytics />
         <OrganizationJsonLd />
         <WebsiteJsonLd />
@@ -97,6 +97,7 @@ export default async function RootLayout({
         <Navbar copy={copy.nav} locale={region.locale} currency={region.currency} />
         {children}
         <ClarityConsent locale={region.locale} />
+        <SupportChat copy={copy.supportChat} />
         <Footer copy={copy.footer} locale={region.locale} currency={region.currency} />
       </body>
     </html>

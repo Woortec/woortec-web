@@ -5,19 +5,19 @@ import { getRequestRegion } from "@/lib/request-region";
 export const metadata: Metadata = {
   title: "Agencia - Woortec",
   description:
-    "Servicios de marketing, automatización y community management para marcas que quieren crecer con una ejecución más cercana.",
+    "Servicios de marketing, automatización y community management con foco en datos, KPIs y decisiones medibles.",
 };
 
 const serviceCards = [
   {
     icon: "/icons/insights.svg",
     title: {
-      es: "Estrategia de marketing",
-      en: "Marketing strategy",
+      es: "Estrategia basada en datos",
+      en: "Data-led strategy",
     },
     description: {
-      es: "Definimos mensajes, objetivos y prioridades para que cada acción tenga sentido y encaje con tu negocio.",
-      en: "We define messages, goals, and priorities so every action supports your business and brand direction.",
+      es: "Aterrizamos objetivos, KPIs y prioridades para que cada acción tenga una lectura clara en negocio.",
+      en: "We align goals, KPIs, and priorities so every action has a clear business reading.",
     },
   },
   {
@@ -27,8 +27,8 @@ const serviceCards = [
       en: "Community management",
     },
     description: {
-      es: "Gestionamos tu presencia en redes con una voz coherente, respuestas ágiles y atención constante a tu comunidad.",
-      en: "We manage your social presence with a consistent voice, fast responses, and ongoing attention to your community.",
+      es: "Gestionamos tu presencia en redes con una voz coherente y un seguimiento de señales útiles para decidir mejor.",
+      en: "We manage your social presence with a consistent voice and track useful signals to make better decisions.",
     },
   },
   {
@@ -38,8 +38,8 @@ const serviceCards = [
       en: "Automation",
     },
     description: {
-      es: "Conectamos herramientas y procesos para ahorrar tiempo, reducir tareas repetitivas y ganar orden operativo.",
-      en: "We connect tools and workflows to save time, reduce repetitive tasks, and bring more operational clarity.",
+      es: "Conectamos herramientas y procesos para ahorrar tiempo, reducir tareas repetitivas y medir mejor lo que pasa.",
+      en: "We connect tools and workflows to save time, reduce repetitive tasks, and measure what is happening more clearly.",
     },
   },
   {
@@ -49,11 +49,46 @@ const serviceCards = [
       en: "Tracking and reporting",
     },
     description: {
-      es: "Medimos resultados, detectamos oportunidades y ajustamos el plan con una visión clara de lo que está funcionando.",
-      en: "We measure results, spot opportunities, and adjust the plan with a clear view of what is working.",
+      es: "Medimos resultados, detectamos patrones y ajustamos el plan con una visión clara de lo que está funcionando.",
+      en: "We measure results, spot patterns, and adjust the plan with a clear view of what is working.",
     },
   },
 ];
+
+const dataSignals = [
+  {
+    es: "KPIs que importan",
+    en: "Meaningful KPIs",
+    description: {
+      es: "Definimos métricas que conectan la actividad con negocio, no solo con volumen.",
+      en: "We define metrics that connect activity to business, not just volume.",
+    },
+  },
+  {
+    es: "Lectura de rendimiento",
+    en: "Performance reading",
+    description: {
+      es: "Convertimos resultados en señales claras para saber qué escalar, cambiar o detener.",
+      en: "We turn results into clear signals so you know what to scale, change, or stop.",
+    },
+  },
+  {
+    es: "Automatización útil",
+    en: "Useful automation",
+    description: {
+      es: "Quitamos trabajo manual para que el equipo pueda centrarse en criterio y ejecución.",
+      en: "We remove manual work so the team can focus on judgment and execution.",
+    },
+  },
+  {
+    es: "Reporting accionable",
+    en: "Actionable reporting",
+    description: {
+      es: "Presentamos lo importante de forma simple, para que la siguiente decisión sea obvia.",
+      en: "We present the important stuff simply, so the next decision is obvious.",
+    },
+  },
+] as const;
 
 export default async function AgenciaPage() {
   const { locale } = await getRequestRegion();
@@ -76,15 +111,15 @@ export default async function AgenciaPage() {
             </h1>
             <p className="max-w-2xl text-lg leading-relaxed text-neutral-600">
               {locale === "es"
-                ? "Pensada para marcas que necesitan una agencia cercana: estrategia, community manager, automatizaciones y seguimiento para trabajar con más foco y menos fricción."
-                : "Built for brands that need a hands-on agency: strategy, community management, automation, and tracking so work moves faster and with less friction."}
+                ? "Pensada para marcas que quieren una agencia cercana, pero con criterio analítico: estrategia, automatización y seguimiento de KPIs para trabajar con más foco y menos fricción."
+                : "Built for brands that want a hands-on agency with analytical discipline: strategy, automation, and KPI tracking so work moves faster and with less friction."}
             </p>
             <div className="flex flex-wrap gap-3">
               {[
-                locale === "es" ? "Marketing" : "Marketing",
-                locale === "es" ? "Community manager" : "Community manager",
-                locale === "es" ? "Automatización" : "Automation",
+                locale === "es" ? "KPIs" : "KPIs",
                 locale === "es" ? "Reporting" : "Reporting",
+                locale === "es" ? "Automatización" : "Automation",
+                locale === "es" ? "Resultados" : "Results",
               ].map((item) => (
                 <span
                   key={item}
@@ -126,7 +161,9 @@ export default async function AgenciaPage() {
               {locale === "es" ? "Servicios incluidos" : "Included services"}
             </p>
             <h2 className="font-heading text-3xl font-bold text-black md:text-4xl">
-              {locale === "es" ? "Todo lo que suele necesitar una agencia" : "Everything a modern agency usually needs"}
+              {locale === "es"
+                ? "Todo lo que suele necesitar una agencia con foco en datos"
+                : "Everything a modern agency needs when data matters"}
             </h2>
           </div>
 
@@ -149,6 +186,41 @@ export default async function AgenciaPage() {
         </div>
       </section>
 
+      <section className="bg-neutral-50 py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid items-start gap-12 md:grid-cols-[1fr_1.1fr]">
+            <div className="space-y-4">
+              <p className="text-sm font-semibold tracking-widest text-woortec-text uppercase">
+                {locale === "es" ? "Enfoque analítico" : "Analytical focus"}
+              </p>
+              <h2 className="font-heading text-3xl font-bold text-black md:text-4xl">
+                {locale === "es"
+                  ? "No hacemos ruido. Hacemos lectura de datos."
+                  : "We do not make noise. We read the data."}
+              </h2>
+              <p className="max-w-xl text-neutral-600">
+                {locale === "es"
+                  ? "La idea es que cada pieza de marketing y automatización deje una señal clara: qué atrae atención, qué convierte, qué ahorra tiempo y qué conviene repetir."
+                  : "The goal is for each marketing and automation move to leave a clear signal: what attracts attention, what converts, what saves time, and what should be repeated."}
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {dataSignals.map((signal) => (
+                <article key={signal.en} className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
+                  <p className="text-sm font-semibold tracking-widest text-woortec-text uppercase">
+                    {locale === "es" ? signal.es : signal.en}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                    {signal.description[locale]}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-neutral-200 py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid items-center gap-12 md:grid-cols-2">
@@ -157,21 +229,23 @@ export default async function AgenciaPage() {
                 {locale === "es" ? "Cómo trabajamos" : "How we work"}
               </p>
               <h2 className="font-heading text-3xl font-bold text-black md:text-4xl">
-                {locale === "es" ? "Una base clara para colaborar sin ruido" : "A clear base to collaborate without noise"}
+                {locale === "es"
+                  ? "Una base clara para colaborar con criterio"
+                  : "A clear base to collaborate with discipline"}
               </h2>
               <p className="text-neutral-600">
                 {locale === "es"
-                  ? "Si vienes de una conversación donde ya aparecen marketing, automatización y community manager, esta categoría concentra ese tipo de trabajo en una propuesta más simple de entender y ejecutar."
-                  : "If a conversation already includes marketing, automation, and community management, this category brings that work together into a simpler, easier-to-execute offer."}
+                  ? "Si vienes de una conversación donde ya aparecen marketing, automatización y community manager, esta categoría concentra ese tipo de trabajo en una propuesta más simple de entender, medir y ejecutar."
+                  : "If a conversation already includes marketing, automation, and community management, this category brings that work together into an easier offer to understand, measure, and execute."}
               </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                locale === "es" ? "Estrategia y calendario" : "Strategy and planning",
-                locale === "es" ? "Gestión de comunidad" : "Community care",
-                locale === "es" ? "Automatizaciones útiles" : "Useful automations",
-                locale === "es" ? "Seguimiento continuo" : "Ongoing tracking",
+                locale === "es" ? "Diagnóstico inicial" : "Initial diagnosis",
+                locale === "es" ? "KPIs y objetivos" : "KPIs and goals",
+                locale === "es" ? "Automatización de procesos" : "Process automation",
+                locale === "es" ? "Reporting y ajustes" : "Reporting and adjustments",
               ].map((item) => (
                 <div
                   key={item}

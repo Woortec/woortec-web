@@ -66,7 +66,7 @@ export const metadata: Metadata = {
       "Woortec, your go-to Digital Platform for Optimizing Ads Investments.",
   },
   icons: {
-    icon: "/logos/logo256.png",
+    icon: "/favicon.ico",
     apple: "/logos/logo256.png",
   },
   alternates: {

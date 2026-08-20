@@ -3,30 +3,21 @@ import Image from "next/image";
 import { getRequestRegion } from "@/lib/request-region";
 
 export const metadata: Metadata = {
-  title: "Agencia - Woortec",
+  title: "Agencia Woortec",
   description:
-    "Servicios de marketing, automatización y community management con foco en datos, KPIs y decisiones medibles.",
+    "Marketing, automatización, community management y reporting con foco en datos y KPIs.",
   openGraph: {
-    title: "Agencia - Woortec",
+    title: "Agencia Woortec",
     description:
-      "Servicios de marketing, automatización y community management con foco en datos, KPIs y decisiones medibles.",
+      "Marketing, automatización, community management y reporting con foco en datos y KPIs.",
     url: "https://woortec.com/agencia",
     type: "website",
-    images: [
-      {
-        url: "https://woortec.com/images/agency-share.png",
-        width: 1200,
-        height: 630,
-        alt: "Woortec Agencia",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agencia - Woortec",
+    title: "Agencia Woortec",
     description:
-      "Servicios de marketing, automatización y community management con foco en datos, KPIs y decisiones medibles.",
-    images: ["https://woortec.com/images/agency-share.png"],
+      "Marketing, automatización, community management y reporting con foco en datos y KPIs.",
   },
 };
 

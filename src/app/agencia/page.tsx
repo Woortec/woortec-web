@@ -6,6 +6,28 @@ export const metadata: Metadata = {
   title: "Agencia - Woortec",
   description:
     "Servicios de marketing, automatización y community management con foco en datos, KPIs y decisiones medibles.",
+  openGraph: {
+    title: "Agencia - Woortec",
+    description:
+      "Servicios de marketing, automatización y community management con foco en datos, KPIs y decisiones medibles.",
+    url: "https://woortec.com/agencia",
+    type: "website",
+    images: [
+      {
+        url: "https://woortec.com/images/agency-share.png",
+        width: 1200,
+        height: 630,
+        alt: "Woortec Agencia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Agencia - Woortec",
+    description:
+      "Servicios de marketing, automatización y community management con foco en datos, KPIs y decisiones medibles.",
+    images: ["https://woortec.com/images/agency-share.png"],
+  },
 };
 
 const serviceCards = [

@@ -253,7 +253,7 @@ export async function generateMetadata({
       ...(post.image && { images: [post.image] }),
     },
     alternates: {
-      canonical: `https://woortec.com/highlights/${slug}`,
+      canonical: `https://www.woortec.com/highlights/${slug}`,
     },
   };
 }

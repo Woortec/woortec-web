@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Agencia de marketing y automatización | Woortec",
     description:
       "Marketing, automatización y reporting para equipos que necesitan más control, menos fricción y decisiones más claras.",
-    url: "https://woortec.com/agencia",
+    url: "https://www.woortec.com/agencia",
     type: "website",
   },
   twitter: {

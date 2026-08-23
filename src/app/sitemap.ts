@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://woortec.com";
+const baseUrl = "https://www.woortec.com";
 
 const blogSlugs = [
   "why-woortec-delivers-superior-roi-for-ads-and-campaigns-every-time",

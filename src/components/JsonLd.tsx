@@ -3,8 +3,8 @@ export function OrganizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Woortec",
-    url: "https://woortec.com",
-    logo: "https://woortec.com/logos/logo.png",
+    url: "https://www.woortec.com",
+    logo: "https://www.woortec.com/logos/logo.png",
     description:
       "Digital Platform for Optimizing Ads Investments. We simplify and organize the advertising investment process.",
     sameAs: [
@@ -32,10 +32,10 @@ export function WebsiteJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Woortec",
-    url: "https://woortec.com",
+    url: "https://www.woortec.com",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://woortec.com/highlights?q={search_term_string}",
+      target: "https://www.woortec.com/highlights?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };

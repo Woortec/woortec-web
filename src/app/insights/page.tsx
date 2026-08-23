@@ -5,7 +5,7 @@ import { getRequestRegion } from "@/lib/request-region";
 export const metadata: Metadata = {
   title: "Ad Overview Insights",
   description: "Get comprehensive ad insights with Woortec.",
-  alternates: { canonical: "https://woortec.com/insights" },
+  alternates: { canonical: "https://www.woortec.com/insights" },
 };
 
 export default async function InsightsPage() {

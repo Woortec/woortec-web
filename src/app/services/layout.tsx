@@ -10,7 +10,7 @@ export const metadata: Metadata = {
       "Choose the right Woortec plan. From free insights to full ads management.",
   },
   alternates: {
-    canonical: "https://woortec.com/services",
+    canonical: "https://www.woortec.com/services",
   },
 };
 

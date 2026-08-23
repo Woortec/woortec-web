@@ -33,7 +33,7 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://woortec.com"),
+  metadataBase: new URL("https://www.woortec.com"),
   title: {
     default: "Woortec - Digital Platform for Optimizing Ads Investments",
     template: "%s | Woortec",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Woortec - Digital Platform for Optimizing Ads Investments",
     description:
       "Woortec, your go-to Digital Platform for Optimizing Ads Investments.",
-    url: "https://woortec.com",
+    url: "https://www.woortec.com",
     siteName: "Woortec",
     type: "website",
     locale: "en_US",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     apple: "/logos/logo256.png",
   },
   alternates: {
-    canonical: "https://woortec.com",
+    canonical: "https://www.woortec.com",
   },
 };
 

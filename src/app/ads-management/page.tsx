@@ -5,6 +5,9 @@ import { getRequestRegion } from "@/lib/request-region";
 export const metadata: Metadata = {
   title: "Ads Management - Woortec",
   description: "Real-time insights for better ad management.",
+  alternates: {
+    canonical: "https://www.woortec.com/ads-management",
+  },
 };
 
 export default async function AdsManagementPage() {

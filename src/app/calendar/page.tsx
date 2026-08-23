@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Calendar - Woortec",
   description:
     "Stay organized with Woortec's calendar tool. Manage your advertising campaign schedules, track important dates, and optimize your workflow for maximum efficiency.",
+  alternates: {
+    canonical: "https://www.woortec.com/calendar",
+  },
 };
 
 export default async function CalendarPage() {

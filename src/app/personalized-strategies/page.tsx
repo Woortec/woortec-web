@@ -5,6 +5,9 @@ import { getRequestRegion } from "@/lib/request-region";
 export const metadata: Metadata = {
   title: "Personalized Strategy - Woortec",
   description: "Tailored solutions to maximize your campaign's potential.",
+  alternates: {
+    canonical: "https://www.woortec.com/personalized-strategies",
+  },
 };
 
 export default async function PersonalizedStrategiesPage() {

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Agencia de marketing y automatización | Woortec",
   description:
     "Marketing, automatización y reporting para equipos que necesitan más control, menos fricción y decisiones más claras.",
+  alternates: {
+    canonical: "https://www.woortec.com/agencia",
+  },
   openGraph: {
     title: "Agencia de marketing y automatización | Woortec",
     description:

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Exo, Ubuntu, Oswald } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -79,26 +80,34 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headerStore = await headers();
+  const userAgent = headerStore.get("user-agent") || "";
+  const isOpenAICrawler =
+    userAgent.includes("OAI-AdsBot") || userAgent.includes("OAI-SearchBot");
   const region = await getRequestRegion();
   const copy = getCopy(region.locale);
 
   return (
     <html lang={region.locale}>
       <head>
-        <MicrosoftClarity />
-        <GoogleAnalytics />
         <OrganizationJsonLd />
         <WebsiteJsonLd />
+        {!isOpenAICrawler && <MicrosoftClarity />}
+        {!isOpenAICrawler && <GoogleAnalytics />}
       </head>
       <body
         className={`${montserrat.variable} ${exo.variable} ${ubuntu.variable} ${oswald.variable} font-sans antialiased`}
       >
-        <GTMNoscript />
-        <Navbar copy={copy.nav} locale={region.locale} currency={region.currency} />
+        {!isOpenAICrawler && <GTMNoscript />}
+        {!isOpenAICrawler && (
+          <Navbar copy={copy.nav} locale={region.locale} currency={region.currency} />
+        )}
         {children}
-        <ClarityConsent locale={region.locale} />
-        <SupportChat copy={copy.supportChat} />
-        <Footer copy={copy.footer} locale={region.locale} currency={region.currency} />
+        {!isOpenAICrawler && <ClarityConsent locale={region.locale} />}
+        {!isOpenAICrawler && <SupportChat copy={copy.supportChat} />}
+        {!isOpenAICrawler && (
+          <Footer copy={copy.footer} locale={region.locale} currency={region.currency} />
+        )}
       </body>
     </html>
   );
